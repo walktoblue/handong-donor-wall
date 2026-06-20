@@ -32,3 +32,27 @@ CSV 업로드보다 관리자 페이지 직접 입력을 선택했다. 이유: �
 
 **첫 번째 독자**
 한동대 후원팀 내부 직원들이 먼저 본다. 공개 배포 전에 내부 검토용으로 먼저 쓰는 것이 목표다.
+
+## 연결 (2026-06-20)
+
+**스택·배포 연결 순서**
+1. Next.js 스캐폴드 생성 (create-next-app@latest, TypeScript·Tailwind·App Router)
+2. shadcn/ui 설치 (`npx shadcn@latest init --defaults` + button·card·input·label·select·textarea·table·badge)
+3. 폰트: Noto Serif (헤딩) + Noto Sans KR (본문) — `app/layout.tsx`에 설정
+4. 디자인 토큰: Stitch "Covenant Heritage" 테마(딥 네이비 #004374 + 골드 #C6A96F + 크림 배경 #fbf9f8)를 `app/globals.css` CSS 변수에 반영
+5. GitHub 레포 생성: `gh repo create handong-donor-wall --public --push`
+6. Vercel 연결: `vercel link` → `vercel git connect` (자동배포 준비)
+7. Supabase 프로비저닝: `vercel integration add supabase` → `.env.local` 자동 생성
+8. Supabase CLI link: `supabase link --project-ref zbxnadgqarloklefhrph`
+
+**막힌 설정과 해결**
+- **Vercel GitHub 연결 오류**: `vercel link` 실행 시 "You need to add a Login Connection" 에러. Vercel 계정이 이메일로만 만들어져 GitHub 로그인 연결이 없었던 것. `vercel.com/account/login-connections`에서 GitHub 연결로 해결.
+- **Vercel GitHub App 미설치**: `vercel git connect`에서 "Make sure you have access" 에러. GitHub에 Vercel 앱이 설치되지 않아 발생. `github.com/apps/vercel`에서 `walktoblue` 계정에 앱 설치 후 해결.
+- **Supabase 이용약관 미동의**: `vercel integration add supabase` 첫 실행 시 `action_required: integration_terms_acceptance_required`. Vercel에서 제공한 링크에서 동의 후 재실행으로 해결.
+- **Supabase CLI 비대화형 로그인 불가**: `supabase login`이 TTY 없는 환경에서 실패. `supabase.com/dashboard/account/tokens`에서 개인 액세스 토큰 발급 후 `SUPABASE_ACCESS_TOKEN` 환경변수로 우회.
+- **Scoop 없음**: Supabase CLI 설치를 위해 Scoop 패키지 매니저를 먼저 설치해야 했다. PowerShell에서 `irm get.scoop.sh | iex`로 설치 후 `scoop install supabase`로 진행.
+
+**배포 현황**
+- GitHub: https://github.com/walktoblue/handong-donor-wall
+- Supabase 프로젝트 ref: `zbxnadgqarloklefhrph`
+- 라이브: 배포 전 (구현 완료 후 자동 배포됨)

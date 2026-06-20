@@ -91,8 +91,8 @@ Next.js (App Router, TypeScript) · Tailwind CSS · shadcn/ui · Supabase · Ver
 
 ## 진행 상황
 - [x] 기획 완료
-- [ ] Stitch 프로토타입
-- [ ] 연결 (GitHub · Vercel · Supabase)
+- [x] Stitch 프로토타입
+- [x] 연결 (GitHub · Vercel · Supabase)
 - [ ] 구현: 기부자 조회 화면
 - [ ] 구현: 감사 화면 (소형 후원자 — 갈대상자 이미지)
 - [ ] 구현: 감사 화면 (대형 후원자 — 사진+스토리)
