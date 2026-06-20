@@ -309,90 +309,195 @@ export default function DonorPageInner() {
     )
   }
 
-  // ────── 소형 후원자 화면 (갈대상자 이미지) ──────
+  // ────── 소형 후원자 화면 (갈대상자 이미지 — 밝은 스타일) ──────
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden" style={{ background: "#0d2a3d" }}>
-      {/* 배경 이미지 */}
-      <div className="absolute inset-0 z-0">
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#fbf9f8" }}>
+      {/* 배경 레이어 (position fixed처럼 전체 채움) */}
+      <div className="fixed inset-0 z-0">
         <img
           src="/reed-basket.jpg"
           alt="갈대상자"
           className="w-full h-full object-cover"
-          style={{ opacity: 0.7 }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/20 to-primary/80" />
+        {/* 크림 그라디언트 오버레이: 위아래는 크림, 중간은 투명하게 */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(251,249,248,0.45) 0%, transparent 22%, transparent 78%, rgba(251,249,248,0.92) 100%)",
+          }}
+        />
+        {/* 아주 연한 네이비 tint */}
+        <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
       </div>
 
       {/* 헤더 */}
-      <header className="relative z-10 sticky top-0 bg-white/10 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="text-sm text-white/80 hover:text-white transition-colors">
-            ← 홈으로
-          </Link>
-          <span className="text-xs font-semibold text-white/60 tracking-widest uppercase">Donor Recognition</span>
-        </div>
+      <header className="relative z-10 sticky top-0 w-full bg-white/80 backdrop-blur-md border-b border-border/40 px-5 md:px-20 py-4 flex items-center justify-between">
+        <Link href="/" className="flex items-center">
+          <span className="text-sm font-medium text-primary" style={{ fontFamily: "var(--font-heading)" }}>
+            한동대학교 발전기금
+          </span>
+        </Link>
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+          <a href="https://sarang.handong.edu" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">후원안내</a>
+          <a href="https://sarang.handong.edu" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">참여하기</a>
+          <Link href="/" className="hover:text-primary transition-colors">나의후원</Link>
+        </nav>
       </header>
 
       {/* 메인 콘텐츠 */}
-      <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-16 text-center">
-        {/* 구분선 + 레이블 */}
-        <div className="flex flex-col items-center gap-2 mb-8">
-          <div className="w-12 h-0.5 bg-secondary rounded-full" />
-          <p className="text-xs font-bold tracking-[0.25em] uppercase text-white/80">Donor Recognition</p>
-        </div>
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-5 md:px-20 overflow-hidden">
+        <div className="w-full max-w-3xl text-center space-y-8">
 
-        {/* 이름 */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight mb-4 drop-shadow-lg" style={{ fontFamily: "var(--font-heading)" }}>
-          {donor.name}
-          <span className="text-3xl sm:text-4xl font-normal text-white/70 ml-3">님</span>
-        </h1>
+          {/* 구분선 + DONOR RECOGNITION 레이블 */}
+          <div className="inline-flex flex-col items-center gap-2">
+            <span className="w-12 h-0.5 rounded-full bg-primary" />
+            <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+              DONOR RECOGNITION
+            </p>
+          </div>
 
-        {/* 서브 메시지 */}
-        <p className="text-lg sm:text-xl text-white/80 font-medium mb-14 max-w-lg leading-relaxed">
-          {donor.name}님의 소중한 후원이<br />
-          <span className="text-secondary font-semibold">한동의 인재를 키우는 갈대상자</span>가 됩니다
-        </p>
+          {/* 이름 */}
+          <div className="space-y-4">
+            <h1
+              className="text-5xl sm:text-6xl md:text-7xl font-bold text-primary tracking-tight"
+              style={{
+                fontFamily: "var(--font-heading)",
+                textShadow: "0 2px 10px rgba(0,0,0,0.15)",
+              }}
+            >
+              {donor.name}{" "}
+              <span
+                className="text-3xl sm:text-4xl font-semibold text-foreground align-middle"
+                style={{ fontFamily: "var(--font-sans)" }}
+              >
+                님
+              </span>
+            </h1>
+            <p className="text-xl font-semibold text-muted-foreground leading-tight max-w-xl mx-auto">
+              {donor.name}님의 소중한 후원이<br />
+              한동의 인재를 키우는 갈대상자가 됩니다
+            </p>
+          </div>
 
-        {/* 성경 구절 카드 */}
-        <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-2xl p-8 md:p-10 max-w-xl w-full shadow-2xl mb-10">
-          <span className="text-3xl text-primary/50 select-none mb-4 block">"</span>
-          <blockquote className="text-white/90 italic leading-relaxed text-base md:text-lg mb-6" style={{ fontFamily: "var(--font-heading)" }}>
-            그를 위하여 갈대 상자를 가져다가 역청과 나무 진을 칠하고 아기를 거기 담아 나일 강 가 갈대 사이에 두고
-          </blockquote>
-          <div className="flex items-center justify-center gap-3">
-            <div className="h-px w-8 bg-white/30" />
-            <cite className="text-secondary text-xs font-bold not-italic tracking-widest uppercase">
-              출애굽기 2:3
-            </cite>
-            <div className="h-px w-8 bg-white/30" />
+          {/* 성경 구절 Glass 카드 */}
+          <div
+            className="rounded-2xl shadow-2xl border border-white/60 mx-auto max-w-xl mt-8 p-8 md:p-10 transition-transform hover:scale-[1.02] duration-500"
+            style={{
+              background: "rgba(255,255,255,0.85)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+            }}
+          >
+            <div className="flex justify-center mb-5">
+              <span className="text-4xl text-primary/30 select-none leading-none">"</span>
+            </div>
+            <blockquote
+              className="text-base md:text-lg text-foreground italic leading-relaxed px-2 mb-6"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              "그를 위하여 갈대 상자를 가져다가 역청과 나무 진을 칠하고 아기를 거기 담아 나일 강 가 갈대 사이에 두고"
+            </blockquote>
+            <div className="flex items-center justify-center gap-3">
+              <div className="h-px w-8 bg-primary/20" />
+              <cite className="text-xs font-bold text-primary not-italic tracking-widest uppercase">
+                EXODUS 2:3
+              </cite>
+              <div className="h-px w-8 bg-primary/20" />
+            </div>
+          </div>
+
+          {/* Sustaining Member 뱃지 */}
+          <div className="flex justify-center pt-2">
+            <div
+              className="flex items-center gap-2 px-6 py-3 rounded-full shadow-lg border border-primary/20"
+              style={{ background: "rgba(255,255,255,0.90)", backdropFilter: "blur(8px)" }}
+            >
+              <svg className="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+              </svg>
+              <span className="text-sm font-semibold text-primary">Sustaining Member</span>
+            </div>
           </div>
         </div>
 
-        {/* 멤버 뱃지 */}
-        <div className="mb-10 flex items-center gap-3 px-6 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full text-white text-sm font-medium shadow-lg">
-          <span>🌾</span>
-          <span>Sustaining Member</span>
-        </div>
-
         {/* 이미지 저장 버튼 */}
-        <button
-          onClick={handleSaveImage}
-          disabled={saving}
-          className="flex items-center gap-3 px-12 py-5 bg-primary text-white rounded-xl shadow-xl hover:bg-primary/90 hover:-translate-y-1 active:scale-95 transition-all duration-300 font-bold text-base disabled:opacity-70"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
-          {saving ? "이미지 생성 중..." : "이미지 저장하기"}
-        </button>
+        <div className="relative z-10 mt-14 mb-10 flex flex-col items-center gap-6">
+          <button
+            onClick={handleSaveImage}
+            disabled={saving}
+            className="group relative flex items-center justify-center gap-3 px-12 py-5 bg-primary text-white rounded-xl shadow-[0_10px_20px_rgba(0,91,154,0.3)] transition-all duration-300 hover:opacity-90 hover:-translate-y-1 active:scale-95 overflow-hidden font-semibold text-sm disabled:opacity-70"
+          >
+            <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span className="relative z-10 tracking-widest">
+              {saving ? "이미지 생성 중..." : "이미지 저장하기"}
+            </span>
+          </button>
+        </div>
 
         {/* 숨겨진 Canvas */}
         <canvas ref={canvasRef} className="hidden" />
       </main>
 
       {/* 푸터 */}
-      <footer className="relative z-10 border-t border-white/10 py-6 px-6 text-center">
-        <p className="text-xs text-white/40">© 2024 한동대학교 발전기금팀</p>
+      <footer
+        className="relative z-10 border-t border-border/40 px-5 md:px-20 py-12"
+        style={{ backgroundColor: "rgba(239,237,237,0.95)" }}
+      >
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
+          <div className="space-y-3">
+            <p className="font-semibold text-primary text-sm" style={{ fontFamily: "var(--font-heading)" }}>
+              한동대학교 발전기금
+            </p>
+            <p className="text-muted-foreground text-xs leading-relaxed max-w-xs">
+              (37554) 경상북도 포항시 북구 흥해읍 한동로 558<br />
+              Handong Global University, Pohang, Korea
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-xs">
+            <div className="space-y-2">
+              <h4 className="font-bold text-foreground">문의하기</h4>
+              <ul className="text-muted-foreground space-y-1">
+                <li>대표전화: 054-260-1114</li>
+                <li>대외협력팀: 054-260-1062</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h4 className="font-bold text-foreground">관련사이트</h4>
+              <ul className="text-muted-foreground space-y-1">
+                <li>
+                  <a href="https://www.handong.edu" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline-offset-4 hover:underline">
+                    한동대학교 홈페이지
+                  </a>
+                </li>
+                <li>
+                  <a href="https://sarang.handong.edu" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline-offset-4 hover:underline">
+                    한동사랑 사이트
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-2 col-span-2 md:col-span-1">
+              <h4 className="font-bold text-foreground">소셜 미디어</h4>
+              <div className="flex gap-3">
+                <a href="https://www.facebook.com/handong.univ" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-border flex items-center justify-center hover:bg-primary hover:text-white text-muted-foreground transition-colors text-xs font-bold">f</a>
+                <a href="mailto:sarang@handong.edu" className="w-8 h-8 rounded-full bg-border flex items-center justify-center hover:bg-primary hover:text-white text-muted-foreground transition-colors">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="max-w-5xl mx-auto mt-10 pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between gap-4 text-xs text-muted-foreground">
+          <p>© 2024 Handong Global University. All rights reserved.</p>
+          <div className="flex gap-5">
+            <a href="#" className="hover:text-foreground transition-colors">개인정보처리방침</a>
+            <a href="#" className="hover:text-foreground transition-colors">이용약관</a>
+          </div>
+        </div>
       </footer>
     </div>
   )
