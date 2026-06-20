@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(winget install --id GitHub.cli --silent --accept-package-agreements --accept-source-agreements)",
+      "PowerShell($url = \"https://github.com/cli/cli/releases/download/v2.95.0/gh_2.95.0_windows_amd64.msi\"; $out = \"$env:TEMP\\\\gh_install.msi\"; Invoke-WebRequest -Uri $url -OutFile $out; Write-Output \"Downloaded to $out\")",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); gh --version)",
+      "PowerShell($release = Invoke-RestMethod -Uri \"https://nodejs.org/dist/index.json\" | Where-Object { $_.lts } | Select-Object -First 1; Write-Output \"LTS version: $\\($release.version\\)\")",
+      "PowerShell($installDir = \"$env:LOCALAPPDATA\\\\Programs\\\\nodejs\"; Expand-Archive -Path \"$env:TEMP\\\\node.zip\" -DestinationPath \"$env:TEMP\\\\node_extracted\" -Force; $extracted = Get-ChildItem \"$env:TEMP\\\\node_extracted\" | Select-Object -First 1; Move-Item $extracted.FullName $installDir -Force; Write-Output \"Installed to $installDir\"; & \"$installDir\\\\node.exe\" --version; & \"$installDir\\\\npm.cmd\" --version)"
+    ]
+  }
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Handong Donor Wall | 김한동 후원자</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .basket-weave-pattern {
+            background-color: #fbf9f8;
+            background-image: radial-gradient(#E5D4B1 0.5px, transparent 0.5px), radial-gradient(#E5D4B1 0.5px, #fbf9f8 0.5px);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
+            opacity: 0.15;
+        }
+        .premium-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 67, 116, 0.08);
+        }
+        @keyframes slow-fade-in {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: slow-fade-in 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dbd9d9",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#00497d",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "background": "#fbf9f8",
+                        "secondary-fixed": "#ffdfa0",
+                        "surface-cream": "#FAF9F6",
+                        "surface-container-high": "#eae8e7",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#ffdfa0",
+                        "tertiary": "#41413e",
+                        "on-secondary-container": "#79612e",
+                        "surface-bright": "#fbf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "deep-navy": "#003D6B",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-variant": "#e4e2e2",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-surface": "#1b1c1c",
+                        "inverse-surface": "#303030",
+                        "pale-gold": "#E5D4B1",
+                        "on-secondary-fixed": "#261a00",
+                        "surface": "#fbf9f8",
+                        "secondary-fixed-dim": "#e1c386",
+                        "on-primary": "#ffffff",
+                        "outline": "#717781",
+                        "tertiary-container": "#595955",
+                        "border-subtle": "#E2E2E2",
+                        "primary": "#004374",
+                        "on-tertiary-container": "#d1cfcb",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "on-background": "#1b1c1c",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "on-primary-container": "#afd2ff",
+                        "primary-fixed-dim": "#9ecaff",
+                        "secondary": "#725b29",
+                        "on-primary-fixed": "#001d36",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f5f3f3",
+                        "outline-variant": "#c1c7d2",
+                        "on-secondary-fixed-variant": "#584413",
+                        "primary-container": "#005b9a",
+                        "surface-container": "#efeded",
+                        "inverse-primary": "#9ecaff",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "on-surface-variant": "#414750",
+                        "primary-fixed": "#d1e4ff",
+                        "tertiary-fixed": "#e4e2dd",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#1161a0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.25rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "margin-desktop": "120px",
+                        "margin-mobile": "20px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body": ["Noto Sans KR", "sans-serif"],
+                        "serif": ["Noto Serif KR", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background font-body text-on-surface selection:bg-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-50 bg-white/90 backdrop-blur-md border-b border-border-subtle">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-7xl mx-auto">
+<div class="flex items-center">
+<img alt="Handong Logo" class="h-10 md:h-12 object-contain" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm tracking-tight" href="#">미션과 비전</a>
+<a class="text-primary font-bold border-b-2 border-primary py-1 text-sm tracking-tight" href="#">명예의 전당</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm tracking-tight" href="#">나의 후원</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">search</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">menu</button>
+</div>
+</nav>
+</header>
+<main class="min-h-screen relative overflow-hidden">
+<!-- Background Decorative Element -->
+<div class="absolute inset-0 basket-weave-pattern pointer-events-none"></div>
+<section class="max-w-[900px] mx-auto px-margin-mobile md:px-0 py-20 relative z-10">
+<!-- Profile Hero Section -->
+<div class="flex flex-col items-center text-center animate-fade-up">
+<div class="relative mb-10">
+<!-- Profile Photo with Elegant Frame -->
+<div class="w-52 h-52 md:w-64 md:h-64 rounded-full p-1 bg-gradient-to-tr from-primary to-pale-gold premium-shadow">
+<div class="w-full h-full rounded-full overflow-hidden bg-white border-[6px] border-white shadow-inner">
+<img alt="후원자 김한동 프로필" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK0mDCknyYkqhathO6TRz7OAUU2gRp50J_36eXYFPcLiK17F7lltJV-XMSZPWGFrz-2TZCt8prDE5PUWRN2Vl2uHeUXerdAFUPsi1deVYBCKwhOwjmVD6ArcljltBOU-foWNctKBmAGIXEFYg3o-Wb27dpPv-Fos8Taz_wfiLvDLg_LJ_7EEfyZimvDRB28jWq1zWDwS_P-frjOzh89i0JGv6YdRQGIkJuy_IeKt8RA4_Y0yqepPdI41FdMQhTFyBpVJZyLh7cEc4r"/>
+</div>
+</div>
+<!-- Major Donor Badge -->
+<div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary-container text-white px-8 py-2.5 rounded-full shadow-xl flex items-center gap-2 border border-white/20">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-bold text-xs uppercase tracking-[0.2em]">MAJOR DONOR</span>
+</div>
+</div>
+<h1 class="text-5xl md:text-6xl font-serif font-bold text-primary mb-3">김한동</h1>
+<p class="text-xl md:text-2xl font-serif text-on-surface-variant/80 mb-14">한동대학교 제1기 졸업생 및 상임이사</p>
+<!-- University Message -->
+<div class="mb-20 w-full max-w-2xl">
+<div class="relative py-12 px-8">
+<div class="absolute inset-0 bg-surface-container-low rounded-2xl -rotate-1"></div>
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary/20 text-5xl mb-6">format_quote</span>
+<p class="text-2xl md:text-3xl font-serif text-primary leading-snug italic font-medium">
+                            "한동의 미래를 함께 만들어 주셔서 감사합니다"
+                        </p>
+<p class="mt-6 text-sm font-medium text-on-surface-variant tracking-widest uppercase">— 한동대학교 총장 및 구성원 일동</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Donation Story Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 animate-fade-up" style="animation-delay: 0.4s;">
+<!-- Story Card -->
+<div class="md:col-span-12 bg-white rounded-2xl p-10 md:p-14 premium-shadow border border-border-subtle relative overflow-hidden">
+<div class="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+<div class="flex items-center gap-4 mb-10">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">history_edu</span>
+</div>
+<h2 class="text-2xl font-serif font-bold text-on-surface">후원 이야기</h2>
+</div>
+<div class="space-y-8 text-lg text-on-surface-variant leading-relaxed font-serif">
+<p class="first-letter:text-4xl first-letter:font-bold first-letter:text-primary first-letter:mr-1 first-letter:float-left">
+                        "제가 처음 한동의 문을 두드렸던 30년 전의 그 겨울을 기억합니다. 아무것도 없던 황무지에서 기도로 시작된 이 캠퍼스는 저에게 배움 이상의 가르침을 주었습니다. '공부해서 남 주자'는 그 고귀한 정신이 제 삶의 이정표가 되었습니다."
+                    </p>
+<p>
+                        "사업을 일구며 마주했던 수많은 파도 속에서도 한동의 가르침은 저를 지탱하는 닻이 되었습니다. 이제 제가 받은 그 축복을 다시 후배들에게 돌려주고자 합니다. 이 후원금이 세상을 변화시키는 1%의 인재들을 길러내는 거름이 되기를 간절히 소망합니다."
+                    </p>
+</div>
+<div class="mt-14 flex flex-wrap gap-4 pt-10 border-t border-border-subtle">
+<div class="flex items-center gap-3 bg-surface-container px-5 py-3 rounded-xl border border-border-subtle">
+<span class="material-symbols-outlined text-primary text-xl">folder_shared</span>
+<span class="text-sm font-bold text-primary">창의융합 인재 양성 기금</span>
+</div>
+<div class="flex items-center gap-3 bg-primary/5 px-5 py-3 rounded-xl border border-primary/20">
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+<span class="text-sm font-bold text-primary">기탁 금액: 100,000,000 KRW</span>
+</div>
+</div>
+</div>
+<!-- Recognition Legacy Cards -->
+<div class="md:col-span-6 bg-white rounded-2xl p-8 premium-shadow border border-border-subtle">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">verified</span>
+<h3 class="text-lg font-bold text-on-surface">주요 공헌 분야</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-on-surface-variant">
+<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+<span class="text-base">한동 글로벌 인재 장학금 창설 (2015)</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface-variant">
+<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+<span class="text-base">비전관 리노베이션 주도</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface-variant">
+<span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+<span class="text-base">해외 단기 선교 봉사단 상시 후원</span>
+</li>
+</ul>
+</div>
+<div class="md:col-span-6 bg-primary text-white rounded-2xl p-8 premium-shadow">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-pale-gold">volunteer_activism</span>
+<h3 class="text-lg font-bold text-white">후배들에게 전하는 한마디</h3>
+</div>
+<p class="font-serif italic text-lg leading-relaxed text-white/90">
+                    "여러분의 꿈이 개인의 영달을 넘어 세상을 치유하는 도구가 되길 바랍니다. 여러분은 한동의 자부심이며, 세상을 밝힐 빛입니다."
+                </p>
+</div>
+</div>
+<!-- Navigation Actions -->
+<div class="mt-24 flex flex-col md:flex-row justify-center gap-6 animate-fade-up" style="animation-delay: 0.6s;">
+<button class="px-10 py-4 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                전체 후원자 목록
+            </button>
+<button class="px-10 py-4 rounded-full bg-primary text-white font-bold hover:bg-deep-navy shadow-lg shadow-primary/25 transition-all flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">edit_note</span>
+                감사 메시지 남기기
+            </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1b1c1c] text-white/60 py-16 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/10 pb-12 mb-12">
+<div class="mb-8 md:mb-0">
+<img alt="Handong Logo" class="h-10 brightness-0 invert opacity-80 mb-6" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<p class="text-sm leading-relaxed max-w-sm">
+                    한동대학교는 하나님의 방법으로 인재를 양성하여 세상을 변화시키고 있습니다.<br/>
+                    여러분의 소중한 후원이 한동의 비전을 완성합니다.
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12 text-sm">
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold mb-2">후원안내</h4>
+<a class="hover:text-white transition-colors" href="#">후원방법</a>
+<a class="hover:text-white transition-colors" href="#">기부금영수증</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold mb-2">참여하기</h4>
+<a class="hover:text-white transition-colors" href="#">명예의 전당</a>
+<a class="hover:text-white transition-colors" href="#">이벤트</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold mb-2">고객센터</h4>
+<p>054-260-1114</p>
+<a class="hover:text-white transition-colors" href="#">문의하기</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 text-xs tracking-wider">
+<div class="flex gap-8 order-2 md:order-1">
+<span>© 2024 HANDONG GLOBAL UNIVERSITY. ALL RIGHTS RESERVED.</span>
+<a class="hover:text-white underline underline-offset-4 transition-colors" href="#">개인정보처리방침</a>
+</div>
+<div class="flex gap-6 order-1 md:order-2">
+<a class="hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-xl">language</span></a>
+<a class="hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-xl">share</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interaction for profile image hover
+    const profileImg = document.querySelector('img[alt="후원자 김한동 프로필"]');
+    if (profileImg) {
+        const container = profileImg.parentElement.parentElement;
+        container.addEventListener('mouseenter', () => {
+            container.style.transform = 'scale(1.03) translateY(-5px)';
+            container.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+        });
+        container.addEventListener('mouseleave', () => {
+            container.style.transform = 'scale(1) translateY(0)';
+        });
+    }
+</script>
+</body></html>

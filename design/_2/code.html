@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dbd9d9",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#00497d",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "background": "#fbf9f8",
+                    "secondary-fixed": "#ffdfa0",
+                    "surface-cream": "#FAF9F6",
+                    "surface-container-high": "#eae8e7",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#ffdfa0",
+                    "tertiary": "#41413e",
+                    "on-secondary-container": "#79612e",
+                    "surface-bright": "#fbf9f8",
+                    "surface-container-lowest": "#ffffff",
+                    "deep-navy": "#003D6B",
+                    "inverse-on-surface": "#f2f0f0",
+                    "surface-variant": "#e4e2e2",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-surface": "#1b1c1c",
+                    "inverse-surface": "#303030",
+                    "pale-gold": "#E5D4B1",
+                    "on-secondary-fixed": "#261a00",
+                    "surface": "#fbf9f8",
+                    "secondary-fixed-dim": "#e1c386",
+                    "on-primary": "#ffffff",
+                    "outline": "#717781",
+                    "tertiary-container": "#595955",
+                    "border-subtle": "#E2E2E2",
+                    "primary": "#005b9a",
+                    "on-tertiary-container": "#d1cfcb",
+                    "on-tertiary-fixed": "#1b1c19",
+                    "on-background": "#1b1c1c",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "on-primary-container": "#afd2ff",
+                    "primary-fixed-dim": "#9ecaff",
+                    "secondary": "#725b29",
+                    "on-primary-fixed": "#001d36",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f5f3f3",
+                    "outline-variant": "#c1c7d2",
+                    "on-secondary-fixed-variant": "#584413",
+                    "primary-container": "#005b9a",
+                    "surface-container": "#efeded",
+                    "inverse-primary": "#9ecaff",
+                    "tertiary-fixed-dim": "#c8c6c2",
+                    "on-surface-variant": "#414750",
+                    "primary-fixed": "#d1e4ff",
+                    "tertiary-fixed": "#e4e2dd",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#1161a0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "section-gap": "80px",
+                    "margin-desktop": "120px",
+                    "margin-mobile": "20px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Noto Sans KR", "sans-serif"],
+                    "headline-lg": ["Noto Serif KR", "serif"],
+                    "label-lg": ["Noto Sans KR", "sans-serif"],
+                    "display-lg-mobile": ["Noto Serif KR", "serif"],
+                    "display-lg": ["Noto Serif KR", "serif"],
+                    "body-lg": ["Noto Sans KR", "sans-serif"],
+                    "label-sm": ["Noto Sans KR", "sans-serif"],
+                    "headline-md": ["Noto Serif KR", "serif"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "44px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-strong {
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .fade-in-up {
+            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .overlay-gradient {
+            background: linear-gradient(to bottom, rgba(251, 249, 248, 0.4) 0%, transparent 20%, transparent 80%, rgba(251, 249, 248, 0.9) 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col">
+<!-- Header Navigation -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-surface-variant px-margin-mobile md:px-margin-desktop py-4 flex items-center justify-between">
+<a class="flex items-center" href="/">
+<img alt="Handong University Logo" class="h-10 md:h-12 object-contain" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</a>
+<div class="hidden md:flex items-center gap-8 font-label-lg text-label-lg text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">후원안내</a>
+<a class="hover:text-primary transition-colors" href="#">참여하기</a>
+<a class="hover:text-primary transition-colors" href="#">나의후원</a>
+</div>
+<button class="md:hidden material-symbols-outlined">menu</button>
+</nav>
+<!-- Main Content Area -->
+<main class="relative flex-1 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-margin-mobile md:px-margin-desktop overflow-hidden">
+<!-- Background Layer -->
+<div class="absolute inset-0 z-0">
+<img alt="Reed Basket Illustration" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsP1GejYdMZo85WmDseotOHOj-_f-hAk5v2lmk8pOb6tzvAKk2c-OICflWHTpheNy2kr27kpSnCqL3bCRCQmIWyrRjTYllHx11r_9a8iSSnju1K3RM3fqw-ExcrydQoDYz9piZbMAKv-yKQHloKK0Q0w2i1FmWEPtUpZduauS0OPWDkZ0z7URGWzsnHTpXN7kVPRiN5GsxBLFzUm2XX0wtZaA_UBh7STTbagRP6aYkbjxfUcaHK1ahd_4k"/>
+<div class="absolute inset-0 overlay-gradient"></div>
+<div class="absolute inset-0 bg-primary/5 mix-blend-multiply"></div>
+</div>
+<!-- Content Canvas -->
+<div class="relative z-10 w-full max-w-3xl text-center space-y-8 fade-in-up">
+<!-- Recognition Header -->
+<div class="space-y-6">
+<div class="inline-flex flex-col items-center gap-2">
+<span class="w-12 h-0.5 bg-primary rounded-full"></span>
+<p class="font-label-sm text-label-sm text-primary tracking-[0.25em] uppercase font-bold">DONOR RECOGNITION</p>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary text-shadow-strong">
+                    홍길동 <span class="font-headline-md text-headline-md text-on-surface align-middle">님</span>
+</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant font-medium leading-tight max-w-xl mx-auto">
+                    홍길동님의 소중한 후원이<br/>한동의 인재를 키우는 갈대상자가 됩니다
+                </p>
+</div>
+<!-- Scripture Verse Card -->
+<div class="glass-card p-8 md:p-10 rounded-2xl shadow-2xl border border-white/50 mx-auto max-w-xl mt-8 transition-transform hover:scale-[1.02] duration-500">
+<div class="flex justify-center mb-6">
+<span class="material-symbols-outlined text-primary/40 text-4xl">format_quote</span>
+</div>
+<blockquote class="font-headline-md text-body-lg md:text-headline-md text-on-surface italic leading-relaxed px-2 mb-6">
+                    “그를 위하여 갈대 상자를 가져다가 역청과 나무 진을 칠하고 아기를 거기 담아 나일 강 가 갈대 사이에 두고”
+                </blockquote>
+<div class="flex items-center justify-center gap-3">
+<div class="h-px w-8 bg-primary/20"></div>
+<cite class="font-label-sm text-label-sm text-primary font-bold not-italic tracking-widest uppercase">EXODUS 2:3</cite>
+<div class="h-px w-8 bg-primary/20"></div>
+</div>
+</div>
+<!-- Tier Identifier -->
+<div class="flex justify-center pt-4">
+<div class="flex items-center gap-3 px-6 py-3 bg-white/90 border border-primary/20 rounded-full shadow-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary font-bold">workspace_premium</span>
+<span class="font-label-lg text-label-lg text-primary">Sustaining Member</span>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="relative z-10 mt-16 mb-12 w-full flex flex-col items-center gap-8">
+<button class="group relative flex items-center justify-center gap-3 px-12 py-5 bg-primary text-white rounded-xl shadow-[0_10px_20px_rgba(0,91,154,0.3)] transition-all duration-300 hover:bg-deep-navy hover:-translate-y-1 active:scale-95 overflow-hidden">
+<div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+<span class="material-symbols-outlined relative z-10">download</span>
+<span class="font-label-lg text-label-lg tracking-widest relative z-10">이미지 저장하기</span>
+</button>
+</div>
+</main>
+<!-- Official Footer -->
+<footer class="bg-surface-container px-margin-mobile md:px-margin-desktop py-12 border-t border-surface-variant">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
+<div class="space-y-4">
+<img alt="Handong Logo" class="h-8 grayscale opacity-70" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<p class="text-on-surface-variant text-sm max-w-sm leading-relaxed">
+                    (37554) 경상북도 포항시 북구 흥해읍 한동로 558<br/>
+                    Handong Global University, 558, Handong-ro, Heunghae-eup, Buk-gu, Pohang-si, Gyeongsangbuk-do, Korea
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-10 text-sm">
+<div class="space-y-3">
+<h4 class="font-bold text-on-surface">문의하기</h4>
+<ul class="text-on-surface-variant space-y-2">
+<li>대표전화: 054-260-1114</li>
+<li>대외협력팀: 054-260-1062</li>
+</ul>
+</div>
+<div class="space-y-3">
+<h4 class="font-bold text-on-surface">관련사이트</h4>
+<ul class="text-on-surface-variant space-y-2">
+<li><a class="hover:text-primary underline-offset-4 hover:underline" href="#">한동대학교 홈페이지</a></li>
+<li><a class="hover:text-primary underline-offset-4 hover:underline" href="#">한동사랑 사이트</a></li>
+</ul>
+</div>
+<div class="space-y-3 col-span-2 md:col-span-1">
+<h4 class="font-bold text-on-surface">소셜 미디어</h4>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#">
+<i class="material-symbols-outlined text-xl">share</i>
+</a>
+<a class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#">
+<i class="material-symbols-outlined text-xl">mail</i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-surface-variant/50 flex flex-col md:flex-row justify-between gap-4">
+<p class="text-xs text-on-surface-variant">© 2024 Handong Global University. All rights reserved.</p>
+<div class="flex gap-6 text-xs text-on-surface-variant">
+<a class="hover:text-on-surface" href="#">개인정보처리방침</a>
+<a class="hover:text-on-surface" href="#">이용약관</a>
+</div>
+</div>
+</footer>
+<script>
+        // Button interaction logic
+        document.querySelector('button').addEventListener('click', function() {
+            const btn = this;
+            const originalContent = btn.innerHTML;
+            
+            btn.innerHTML = `
+                <span class="material-symbols-outlined animate-spin relative z-10">sync</span>
+                <span class="font-label-lg text-label-lg tracking-widest relative z-10">이미지 생성 중...</span>
+            `;
+            btn.classList.add('opacity-90');
+            
+            setTimeout(() => {
+                btn.innerHTML = `
+                    <span class="material-symbols-outlined relative z-10">check_circle</span>
+                    <span class="font-label-lg text-label-lg tracking-widest relative z-10">저장 완료</span>
+                `;
+                btn.classList.replace('bg-primary', 'bg-secondary');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.replace('bg-secondary', 'bg-primary');
+                    btn.classList.remove('opacity-90');
+                }, 2000);
+            }, 1500);
+        });
+
+        // Parallax effect for desktop
+        window.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) {
+                const amount = 8;
+                const x = (e.clientX / window.innerWidth - 0.5) * amount;
+                const y = (e.clientY / window.innerHeight - 0.5) * amount;
+                document.querySelector('.relative.z-10.w-full').style.transform = `translate(${x}px, ${y}px)`;
+            }
+        });
+    </script>
+</body></html>

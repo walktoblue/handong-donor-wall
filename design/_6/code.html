@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>기부자 등록 - Handong Donor Wall</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;family=Noto+Serif:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dbd9d9",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#00497d",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "background": "#fbf9f8",
+                    "secondary-fixed": "#ffdfa0",
+                    "surface-cream": "#FAF9F6",
+                    "surface-container-high": "#eae8e7",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#ffdfa0",
+                    "tertiary": "#41413e",
+                    "on-secondary-container": "#79612e",
+                    "surface-bright": "#fbf9f8",
+                    "surface-container-lowest": "#ffffff",
+                    "deep-navy": "#003D6B",
+                    "inverse-on-surface": "#f2f0f0",
+                    "surface-variant": "#e4e2e2",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-surface": "#1b1c1c",
+                    "inverse-surface": "#303030",
+                    "pale-gold": "#E5D4B1",
+                    "on-secondary-fixed": "#261a00",
+                    "surface": "#fbf9f8",
+                    "secondary-fixed-dim": "#e1c386",
+                    "on-primary": "#ffffff",
+                    "outline": "#717781",
+                    "tertiary-container": "#595955",
+                    "border-subtle": "#E2E2E2",
+                    "primary": "#004374",
+                    "on-tertiary-container": "#d1cfcb",
+                    "on-tertiary-fixed": "#1b1c19",
+                    "on-background": "#1b1c1c",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "on-primary-container": "#afd2ff",
+                    "primary-fixed-dim": "#9ecaff",
+                    "secondary": "#725b29",
+                    "on-primary-fixed": "#001d36",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f5f3f3",
+                    "outline-variant": "#c1c7d2",
+                    "on-secondary-fixed-variant": "#584413",
+                    "primary-container": "#005b9a",
+                    "surface-container": "#efeded",
+                    "inverse-primary": "#9ecaff",
+                    "tertiary-fixed-dim": "#c8c6c2",
+                    "on-surface-variant": "#414750",
+                    "primary-fixed": "#d1e4ff",
+                    "tertiary-fixed": "#e4e2dd",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#1161a0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "section-gap": "80px",
+                    "margin-desktop": "120px",
+                    "margin-mobile": "20px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Noto Sans"],
+                    "headline-lg": ["Noto Serif"],
+                    "label-lg": ["Noto Sans"],
+                    "display-lg-mobile": ["Noto Serif"],
+                    "display-lg": ["Noto Serif"],
+                    "body-lg": ["Noto Sans"],
+                    "label-sm": ["Noto Sans"],
+                    "headline-md": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "44px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .input-focus-ring:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 91, 154, 0.2);
+            border-color: #005b9a;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-white/90 backdrop-blur-md border-b border-border-subtle">
+<div class="flex justify-between items-center px-4 md:px-margin-desktop py-4 max-w-[1440px] mx-auto w-full">
+<div class="flex items-center gap-12">
+<a class="flex-shrink-0" href="#">
+<img alt="Handong Logo" class="h-[40px] md:h-[50px] w-auto object-contain" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</a>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">기부안내</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">명예의 전당</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">기부자 등록</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">search</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center py-16 px-margin-mobile md:px-margin-desktop">
+<div class="w-full max-w-2xl bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden border border-border-subtle">
+<!-- Form Header -->
+<div class="bg-primary-container p-10 text-center relative">
+<div class="absolute inset-0 opacity-5 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+</div>
+<h1 class="font-headline-md text-headline-md text-white mb-3 relative z-10">기부자 등록</h1>
+<p class="text-white/80 font-body-md max-w-md mx-auto relative z-10">한동의 미래를 함께 엮어가는 소중한 동역자의 정보를 기록합니다.</p>
+</div>
+<!-- Registration Form -->
+<form action="#" class="p-8 md:p-12 space-y-8" method="POST" onsubmit="event.preventDefault(); alert('저장되었습니다.');">
+<div class="space-y-6">
+<!-- Name Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant flex items-center gap-2" for="donor_name">
+<span class="material-symbols-outlined text-[20px] text-primary">person</span> 이름
+                        </label>
+<input class="w-full px-4 py-3.5 bg-white border border-outline-variant rounded-lg text-on-surface placeholder:text-outline/60 input-focus-ring transition-all duration-200" id="donor_name" name="donor_name" placeholder="기부자 성함을 입력해 주세요" required="" type="text"/>
+</div>
+<!-- Amount Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant flex items-center gap-2" for="donation_amount">
+<span class="material-symbols-outlined text-[20px] text-primary">payments</span> 기부 금액
+                        </label>
+<div class="relative">
+<input class="w-full pl-4 pr-12 py-3.5 bg-white border border-outline-variant rounded-lg text-on-surface placeholder:text-outline/60 input-focus-ring transition-all duration-200" id="donation_amount" name="donation_amount" placeholder="금액을 입력해 주세요" required="" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-medium">원</span>
+</div>
+</div>
+<!-- Photo Upload Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">photo_camera</span> 사진 업로드
+                        </label>
+<div class="relative group">
+<input accept="image/*" class="hidden" id="donor_photo" name="donor_photo" type="file"/>
+<label class="flex flex-col items-center justify-center w-full h-44 border-2 border-dashed border-outline-variant rounded-xl cursor-pointer bg-surface-container-low hover:bg-surface-container hover:border-primary transition-all duration-200" for="donor_photo">
+<div class="flex flex-col items-center justify-center pt-5 pb-6">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary text-4xl mb-3 transition-colors">cloud_upload</span>
+<p class="text-body-md text-on-surface-variant font-medium">사진 파일을 선택하거나 드래그하세요</p>
+<p class="text-label-sm text-outline mt-1">PNG, JPG up to 10MB</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Story Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant flex items-center gap-2" for="donor_story">
+<span class="material-symbols-outlined text-[20px] text-primary">auto_stories</span> 기부 스토리
+                        </label>
+<textarea class="w-full px-4 py-3.5 bg-white border border-outline-variant rounded-lg text-on-surface placeholder:text-outline/60 input-focus-ring transition-all duration-200 resize-none" id="donor_story" name="donor_story" placeholder="나눔의 마음을 담은 짧은 이야기를 들려주세요" rows="5"></textarea>
+<p class="text-label-sm text-outline text-right mt-1" id="char-count">0 / 500 자</p>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-4">
+<button class="w-full bg-primary-container py-4 px-8 rounded-lg text-white font-bold text-lg hover:bg-primary transition-all duration-300 transform active:scale-[0.99] flex items-center justify-center gap-2 shadow-md hover:shadow-lg" type="submit">
+<span class="material-symbols-outlined">save</span>
+                        기부자 정보 저장하기
+                    </button>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-[#333333] text-white py-12">
+<div class="max-w-[1440px] mx-auto px-4 md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-white/10 pb-10">
+<div class="space-y-4">
+<img alt="Handong Logo White" class="h-10 brightness-0 invert opacity-80" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<p class="text-sm text-white/60 leading-relaxed">한동대학교는 하나님의 방법으로 인재를 양성하여 세상을 변화시키고자 합니다.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm text-white/60">
+<li><a class="hover:text-white transition-colors" href="#">발전기금안내</a></li>
+<li><a class="hover:text-white transition-colors" href="#">온라인약정</a></li>
+<li><a class="hover:text-white transition-colors" href="#">예우프로그램</a></li>
+<li><a class="hover:text-white transition-colors" href="#">기탁증서출력</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Support</h4>
+<ul class="space-y-2 text-sm text-white/60">
+<li><a class="hover:text-white transition-colors" href="#">자주 묻는 질문</a></li>
+<li><a class="hover:text-white transition-colors" href="#">공지사항</a></li>
+<li><a class="hover:text-white transition-colors" href="#">개인정보처리방침</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Contact Info</h4>
+<p class="text-sm text-white/60">경상북도 포항시 북구 흥해읍 한동로 558</p>
+<p class="text-sm text-white/60 mt-2">Tel: 054-260-1064</p>
+<p class="text-sm text-white/60">Email: sarang@handong.edu</p>
+</div>
+</div>
+<div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
+<p>© 2024 Handong Global University. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white" href="#">Facebook</a>
+<a class="hover:text-white" href="#">Instagram</a>
+<a class="hover:text-white" href="#">YouTube</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // File input micro-interaction
+        const fileInput = document.getElementById('donor_photo');
+        const fileLabel = fileInput.nextElementSibling.querySelector('p.text-body-md');
+        
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                fileLabel.textContent = e.target.files[0].name;
+                fileLabel.classList.add('text-primary');
+            }
+        });
+
+        // Text area character count
+        const textarea = document.getElementById('donor_story');
+        const counter = document.getElementById('char-count');
+        
+        textarea.addEventListener('input', (e) => {
+            const length = e.target.value.length;
+            counter.textContent = `${length} / 500 자`;
+            if (length > 450) {
+                counter.classList.add('text-error');
+                counter.classList.remove('text-outline');
+            } else {
+                counter.classList.remove('text-error');
+                counter.classList.add('text-outline');
+            }
+        });
+    </script>
+</body></html>

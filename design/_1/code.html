@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>한동대학교 기부자 명예의 전당</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-dim": "#dbd9d9",
+                "on-error": "#ffffff",
+                "on-primary-fixed-variant": "#00497d",
+                "error": "#ba1a1a",
+                "on-secondary": "#ffffff",
+                "background": "#fbf9f8",
+                "secondary-fixed": "#ffdfa0",
+                "surface-cream": "#FAF9F6",
+                "surface-container-high": "#eae8e7",
+                "error-container": "#ffdad6",
+                "secondary-container": "#ffdfa0",
+                "tertiary": "#41413e",
+                "on-secondary-container": "#79612e",
+                "surface-bright": "#fbf9f8",
+                "surface-container-lowest": "#ffffff",
+                "deep-navy": "#003D6B",
+                "inverse-on-surface": "#f2f0f0",
+                "surface-variant": "#e4e2e2",
+                "surface-container-highest": "#e4e2e2",
+                "on-surface": "#1b1c1c",
+                "inverse-surface": "#303030",
+                "pale-gold": "#E5D4B1",
+                "on-secondary-fixed": "#261a00",
+                "surface": "#fbf9f8",
+                "secondary-fixed-dim": "#e1c386",
+                "on-primary": "#ffffff",
+                "outline": "#717781",
+                "tertiary-container": "#595955",
+                "border-subtle": "#E2E2E2",
+                "primary": "#005b9a",
+                "on-tertiary-container": "#d1cfcb",
+                "on-tertiary-fixed": "#1b1c19",
+                "on-background": "#1b1c1c",
+                "on-tertiary-fixed-variant": "#474744",
+                "on-primary-container": "#afd2ff",
+                "primary-fixed-dim": "#9ecaff",
+                "secondary": "#725b29",
+                "on-primary-fixed": "#001d36",
+                "on-tertiary": "#ffffff",
+                "surface-container-low": "#f5f3f3",
+                "outline-variant": "#c1c7d2",
+                "on-secondary-fixed-variant": "#584413",
+                "primary-container": "#004374",
+                "surface-container": "#efeded",
+                "inverse-primary": "#9ecaff",
+                "tertiary-fixed-dim": "#c8c6c2",
+                "on-surface-variant": "#414750",
+                "primary-fixed": "#d1e4ff",
+                "tertiary-fixed": "#e4e2dd",
+                "on-error-container": "#93000a",
+                "surface-tint": "#005b9a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.5rem",
+                "lg": "0.75rem",
+                "xl": "1rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "gutter": "24px",
+                "section-gap": "80px",
+                "margin-desktop": "120px",
+                "margin-mobile": "20px",
+                "base": "8px",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "body-md": ["Noto Sans KR", "sans-serif"],
+                "headline-lg": ["Noto Serif KR", "serif"],
+                "label-lg": ["Noto Sans KR", "sans-serif"],
+                "display-lg": ["Noto Serif KR", "serif"],
+                "body-lg": ["Noto Sans KR", "sans-serif"],
+                "label-sm": ["Noto Sans KR", "sans-serif"],
+                "headline-md": ["Noto Serif KR", "serif"]
+            },
+            "fontSize": {
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "44px", "fontWeight": "600"}],
+                "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .university-pattern {
+            background-color: #fbf9f8;
+            background-image: radial-gradient(#005b9a 0.5px, transparent 0.5px), radial-gradient(#005b9a 0.5px, #fbf9f8 0.5px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.03;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top center, rgba(0, 91, 154, 0.05) 0%, rgba(251, 249, 248, 0) 70%);
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-white/90 backdrop-blur-md border-b border-surface-variant">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto w-full">
+<div class="flex items-center">
+<a class="block h-10 md:h-12" href="#">
+<img alt="한동대학교 로고" class="h-full object-contain" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</a>
+</div>
+<div class="hidden lg:flex items-center gap-10">
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors" href="#">학교 소개</a>
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors" href="#">기부 참여</a>
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors" href="#">기부자 예우</a>
+<a class="text-primary font-bold border-b-2 border-primary py-1" href="#">명예의 전당</a>
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors" href="#">공지사항</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-5 py-2 rounded-lg font-label-lg hover:bg-primary-container transition-all active:scale-95 hidden md:block">
+                후원하기
+            </button>
+<button class="text-on-surface-variant lg:hidden">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="flex-grow relative overflow-hidden">
+<!-- Elegant Background Pattern -->
+<div class="absolute inset-0 university-pattern pointer-events-none"></div>
+<div class="absolute inset-0 hero-gradient pointer-events-none"></div>
+<!-- Main Hero Section -->
+<section class="relative pt-24 pb-32 px-margin-mobile md:px-margin-desktop flex flex-col items-center justify-center text-center max-w-5xl mx-auto z-10">
+<div class="mb-10 fade-in-up">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-label-lg uppercase tracking-widest mb-6">Honor Roll</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 tracking-tight">
+                한동대학교 온라인 도너월
+            </h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant mb-12 max-w-3xl leading-relaxed mx-auto">
+                사랑과 정성으로 세워가는 갈대상자,<br/>
+<span class="text-primary/80">당신의 헌신이 한동의 미래를 만듭니다.</span>
+</p>
+</div>
+<!-- Search Container -->
+<div class="w-full max-w-3xl bg-white p-2 rounded-xl shadow-[0px_20px_50px_rgba(0,91,154,0.08)] border border-surface-variant flex items-center mb-10 transition-all duration-300 focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/5 fade-in-up" style="animation-delay: 0.1s;">
+<div class="pl-6 text-outline">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 px-4 py-5 text-body-lg font-body-md text-on-surface placeholder:text-outline/60" placeholder="성함 또는 법인명을 입력해 주세요" type="text"/>
+<button class="bg-primary hover:bg-primary-container text-white px-10 py-5 rounded-lg font-label-lg transition-all active:scale-95 whitespace-nowrap mr-1 shadow-md">
+                검색하기
+            </button>
+</div>
+<!-- Action Link -->
+<div class="fade-in-up" style="animation-delay: 0.2s;">
+<a class="group inline-flex items-center gap-2 text-primary font-label-lg hover:underline decoration-2 underline-offset-4" href="#">
+<span>전체 기부자 명단 및 감사 메시지 보기</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Content Sections -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32 grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10 fade-in-up" style="animation-delay: 0.3s;">
+<!-- Left Card -->
+<div class="md:col-span-5 bg-white p-10 rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.03)] border border-surface-variant flex flex-col justify-between group hover:shadow-lg transition-all duration-500">
+<div>
+<div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Major Donors</h3>
+<p class="text-on-surface-variant text-body-md leading-relaxed">
+                    한동의 비전을 위해 고귀한 나눔을 실천해주신 고액 후원자분들을 소개합니다. 그분들의 숭고한 정신을 기억하며 한동의 내일을 열어갑니다.
+                </p>
+</div>
+<div class="mt-10">
+<button class="text-primary font-label-lg flex items-center gap-1 group-hover:gap-2 transition-all">
+                    자세히 보기 <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Right Card -->
+<div class="md:col-span-7 bg-primary text-white p-10 rounded-xl shadow-xl flex items-center justify-between overflow-hidden relative group">
+<div class="relative z-10 max-w-md">
+<div class="flex items-center gap-2 mb-2 opacity-90">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span class="text-label-lg uppercase tracking-wider">Campaign Progress</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">총 누적 후원 금액</h3>
+<div class="text-[44px] font-bold mb-6 tracking-tight">₩ 12,450,000,000</div>
+<div class="space-y-3">
+<div class="w-full bg-white/20 h-2.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full w-[83%] shadow-[0_0_10px_rgba(255,223,160,0.5)]"></div>
+</div>
+<div class="flex justify-between text-sm font-medium opacity-90">
+<span>현재 달성률 83%</span>
+<span>목표 150억 원</span>
+</div>
+</div>
+</div>
+<!-- Background Image Decor -->
+<div class="absolute right-0 top-0 h-full w-2/3 opacity-15 pointer-events-none mix-blend-overlay">
+<div class="w-full h-full bg-center bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuiR9JWb5XF3vuoZGYkBQwzdQSslv40IL712H73oV7upzPWkmXpi8mPoxf6jZXBw8WIBTQcePiVFIFTldW2f_5s_cvbqpCV86gmw8zNz1ANkdJa_6AunlCnkmuNa0BLYI4bitXpM04FBK4W9a64IzrWrfOsHDzwMhL3YHIxdT-qrnWmyLjqtR3u3pSxhlUPJ_nm_UygOY_Z2fOl5Vg0OshfhDIe6AKOHsAcoGNu4n2xGZynFK9SC-CEEk44xVnSjaxAn1hgHEQJiLu')"></div>
+</div>
+<span class="material-symbols-outlined text-[160px] absolute -right-8 -bottom-8 opacity-5 rotate-12">school</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-highest border-t border-surface-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+<div class="lg:col-span-4">
+<img alt="한동대학교" class="h-10 mb-6 grayscale opacity-80" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<p class="text-on-surface-variant text-body-md leading-relaxed mb-6">
+                    세상을 변화시키는 하나님의 대학, 한동대학교는 정직과 성실로 인재를 양성하며 세상을 섬기는 글로벌 리더를 키워냅니다.
+                </p>
+</div>
+<div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
+<div>
+<h4 class="font-bold text-on-surface mb-4">Contact</h4>
+<ul class="text-on-surface-variant text-label-lg space-y-2">
+<li>경상북도 포항시 북구 흥해읍 한동로 558</li>
+<li>대외협력팀: 054-260-1064</li>
+<li>Email: development@handong.edu</li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-4">Quick Links</h4>
+<ul class="text-on-surface-variant text-label-lg space-y-2">
+<li><a class="hover:text-primary transition-colors" href="#">대학 홈페이지</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">개인정보처리방침</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">이메일무단수집거부</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-1">
+<h4 class="font-bold text-on-surface mb-4">SNS</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all text-on-surface-variant" href="#">
+<span class="material-symbols-outlined text-xl">language</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all text-on-surface-variant" href="#">
+<span class="material-symbols-outlined text-xl">smart_display</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4 text-label-sm text-on-surface-variant/60">
+<p>© 2024 HANDONG GLOBAL UNIVERSITY. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-6">
+<a class="hover:text-on-surface" href="#">Campus Map</a>
+<a class="hover:text-on-surface" href="#">Admin Portal</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Search bar interaction
+    const searchInput = document.querySelector('input');
+    const searchContainer = searchInput.parentElement;
+
+    searchInput.addEventListener('focus', () => {
+        searchContainer.classList.add('shadow-[0px_20px_60px_rgba(0,91,154,0.12)]');
+    });
+
+    searchInput.addEventListener('blur', () => {
+        searchContainer.classList.remove('shadow-[0px_20px_60px_rgba(0,91,154,0.12)]');
+    });
+
+    // Simple reveal animation on scroll
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+</script>
+</body></html>
