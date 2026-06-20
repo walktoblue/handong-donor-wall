@@ -56,3 +56,15 @@ CSV 업로드보다 관리자 페이지 직접 입력을 선택했다. 이유: �
 - GitHub: https://github.com/walktoblue/handong-donor-wall
 - Supabase 프로젝트 ref: `zbxnadgqarloklefhrph`
 - 라이브: 배포 전 (구현 완료 후 자동 배포됨)
+
+### [2026-06-20] 보안 점검
+- **점검 항목**: .env git 커밋 여부 · NEXT_PUBLIC 키 노출 · 하드코딩 비밀 키 · service_role 클라이언트 사용 · RLS 활성화 · 민감정보 평문 저장(법상 암호화 의무 대상)
+- **결과**: 6건 전부 통과. CRITICAL 0건.
+  1. `.env.local` → git 추적 안 됨 (gitignore 정상)
+  2. `NEXT_PUBLIC_*` → anon 키만 브라우저 노출, SERVICE_ROLE은 서버 전용 변수로만 존재
+  3. 하드코딩 비밀 키 → 없음. lib/supabase.ts는 `process.env` 참조만 함
+  4. service_role 클라이언트 분리 → lib/supabase.ts는 anon 키만 사용. 클라이언트 컴포넌트에서 service_role 접근 없음
+  5. RLS → donors 테이블에 활성화 + 공개 SELECT(is_active=true) + 관리자 전체 CRUD 정책 완비
+  6. 민감정보 평문 저장 → donors 테이블은 이름·금액·사진URL·스토리만 저장. 주민번호·카드·계좌 등 법상 의무 대상 없음. 비밀번호는 Supabase Auth가 처리 (우리 DB에 저장 안 함)
+- **남은 위험**: 없음. 다만 한동대 후원팀 외 다른 관리자를 추가할 경우, Supabase Auth에서 개별 계정을 만들고 role 기반 정책을 추가하는 것이 좋다 (현재는 "로그인된 사람 = 모두 관리자" 구조).
+- **배운 것**: `Card`(UI 컴포넌트)나 `password`(로그인 상태 변수) 같이 이름이 비슷한 것이 grep에 걸리지만, 실제 DB 저장·전송 여부를 함께 확인해야 오탐을 걸러낼 수 있다.
