@@ -62,7 +62,7 @@ export default function DonorPageInner() {
     // 배경 이미지 (갈대상자)
     const bgImg = new window.Image()
     bgImg.crossOrigin = "anonymous"
-    bgImg.src = "/reed-basket.jpg"
+    bgImg.src = "/reed-basket.png"
 
     bgImg.onload = () => {
       // 배경
@@ -315,7 +315,7 @@ export default function DonorPageInner() {
       {/* 배경 레이어 (position fixed처럼 전체 채움) */}
       <div className="fixed inset-0 z-0">
         <img
-          src="/reed-basket.jpg"
+          src="/reed-basket.png"
           alt="갈대상자"
           className="w-full h-full object-cover"
         />
